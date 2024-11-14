@@ -36,4 +36,32 @@ Despues de mucho sufrimiento funciona perfectamente
 Lamentablememnte esta ocurriendo un error externo donde ni yo ni el profesor pueden solucionar:
 broken trust chain resolving 'dl-cdn.alpiasir_bind9
 Intentare probar otro dia pero si no se arregla tendre que dejar la practica así
+14/11/24 21:22
+Voy a continuar con la instalacion de dig cambiando la imagen de alpine con la de ubuntu porque me da demasiados problemas:
+- Primero encendemos el contendor y en otra terminal ejecutamos el siguiente comando para conectarnos:
+$ docker exec -it asir2_bind9 bash
+- Una vez dentro vamos a actualizar y a instalar la herramienta dig:
+$ apt update
+$ apt install -y dnsutils
+- Por ultimo comprobamos el funcionamiendo del comando
+$ dig google
+
+; <<>> DiG 9.18.28-0ubuntu0.24.04.1-Ubuntu <<>> google
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: SERVFAIL, id: 1235
+;; flags: qr rd; QUERY: 1, ANSWER: 0, AUTHORITY: 0, ADDITIONAL: 0
+;; WARNING: recursion requested but not available
+
+;; QUESTION SECTION:
+;google.            	IN	A
+
+;; Query time: 1 msec
+;; SERVER: 127.0.0.11#53(127.0.0.11) (UDP)
+;; WHEN: Thu Nov 14 20:31:34 UTC 2024
+;; MSG SIZE  rcvd: 24
+
+
+
+
 
